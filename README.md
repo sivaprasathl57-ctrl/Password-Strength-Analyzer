@@ -4,6 +4,64 @@
 The Password Strength Analyzer is a tool designed to evaluate the strength of passwords based on various criteria such as length, character variety, and common patterns. It helps users create strong, secure passwords and avoid weak or easily guessable ones.
 
 
+# Purpose
+
+teach password security, entropy estimation, and UX for secure guidance.
+
+
+#Workflow
+
+
+Implementation steps
+1.	Project scaffold
+
+○	Create repo password-strength-analyzer.
+
+○	Folders: /src, /tests, /docs, /assets.
+
+2.	Design UX
+
+○	Simple UI: input box, strength meter (bar + label), suggestions list.
+
+○	Accessibility: ARIA labels, visible contrast, keyboard accessible.
+
+3.	Core analyzer module (functions)
+
+○	checkLength(pwd) → boolean/score.
+
+○	charClasses(pwd) → counts classes: lowercase, uppercase, digits, symbols.
+
+○	isCommonPassword(pwd) → check against a blacklist (rockyou short list or curated top-10k).
+
+○	estimateEntropy(pwd) → bits using pool-size method:
+
+■	Pool size = sum of character sets used (e.g., lowercase 26 + uppercase 26 + digits 10 + symbols ~32 ≈ 94).
+
+■	Entropy ≈ length * log2(pool_size).
+ Example: for a password using all classes of length 8, entropy ≈ 52.44 bits (8 × log2(94)). For length 12 with same pool ≈ 78.66 bits.
+
+○	generateSuggestions(pwd) → actionable tips (add length, add symbols, avoid dictionary words).
+
+4.	Scoring & thresholds
+
+○	Combine signals into a simple rubric (example):
+
+■	If isCommonPassword → Very Weak.
+
+■	Else use entropy + class checks:
+
+■	entropy < 28 → Very Weak
+
+■	28–35 → Weak
+
+■	36–59 → Moderate
+
+■	60–127 → Strong
+
+■	≥128 → Very Strong
+
+○	Show both label and numeric entropy bits.
+
 
 
 ## Features
