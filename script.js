@@ -1,4 +1,3 @@
-// Character sets
 const sets = {
   lower: "abcdefghijklmnopqrstuvwxyz",
   upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -6,7 +5,6 @@ const sets = {
   symbols: "!@#$%^&*()-_=+[{]}|;:',<.>/?`~"
 };
 
-// Load JSON file (common passwords)
 async function loadCommonPasswords() {
   try {
     const res = await fetch("common-passwords.json");
@@ -105,3 +103,4 @@ async function analyzePassword(pwd) {
 document.getElementById("passwordInput").addEventListener("input", e => {
   analyzePassword(e.target.value);
 });
+
