@@ -1,4 +1,4 @@
-body {/* Reset & basic styles */
+body {
 * {
   box-sizing: border-box;
   margin: 0;
@@ -99,14 +99,13 @@ ul li::before {
   color: #ffeb3b;
 }
 
-/* Strength bar colors animation */
-.strength-0 { background: #ff4d4d; }       /* Very Weak */
-.strength-1 { background: #ff944d; }       /* Weak */
-.strength-2 { background: #ffd11a; }       /* Medium */
-.strength-3 { background: #8cff66; }       /* Strong */
-.strength-4 { background: #33ff99; }       /* Very Strong */
+.strength-0 { background: #ff4d4d; }       
+.strength-1 { background: #ff944d; }       
+.strength-2 { background: #ffd11a; }       
+.strength-3 { background: #8cff66; }       
+.strength-4 { background: #33ff99; }      
 
-/* Responsive */
+
 @media (max-width: 450px) {
   main {
     padding: 2rem;
@@ -116,5 +115,6 @@ ul li::before {
     font-size: 1.6rem;
   }
 }
+
 
 
