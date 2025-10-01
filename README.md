@@ -9,7 +9,7 @@ The Password Strength Analyzer is a tool designed to evaluate the strength of pa
 teach password security, entropy estimation, and UX for secure guidance.
 
 
-#Workflow
+# Workflow
 
 
 Implementation steps
